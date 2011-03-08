@@ -1,0 +1,43 @@
+<screen height="800" width="800">
+	<layer depth="0.0">
+		<object xtype="arc" center="point1" radius="length1" startAngle="angle1" endAngle="angle2"></object>
+		
+		<object id="point1" x="0.0" y="0.0"></object >
+		<object id="length1" value="0.6"></object >
+		<object id="angle1" value="0"></object >
+		<object id="angle2" value="180"></object>
+	</layer>
+	
+	<layer depth="0.0">
+		<object xtype="arc" center="point1" radius="length2" startAngle="angle1" endAngle="angle2"></object>
+		
+
+		<object  id="length2" value="0.8"></object>
+		<object  id="angle1" value="0"></object>
+		<object  id="angle2" value="180"></object>
+		
+	</layer>
+	
+	<layer depth="0.0">
+		<object xtype="line" start="point3" end="point4"></object>
+		<object id="point3" x="0.0" y="0.0"></object>
+		<object id="point4" x="0.2" y="0.4"></object>
+	</layer>
+	
+	<layer depth="0.0">
+		<object xtype="polynomial" pointGroup='points1'></object>
+		<object id="points1">
+			<object order="1" x="0.0" y="0.0"></object>
+			<object order="2" x="1.0" y="1.0"></object>
+			<object order="3" x="-1.0" y="1.0"></object>
+		</object>
+		
+	</layer>
+	
+	<hooks>
+		<hook for="point1" param="x" function="get_robot_location_x"></hook>
+		<hook for="point1" param="y" function="get_robot_location_y"></hook>
+		<hook for="point1" param="radius" function="get_object_location"></hook>
+	</hooks>
+	
+</screen>
